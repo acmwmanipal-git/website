@@ -10,7 +10,7 @@ const workshops = [
     title: "Finovva X ACMW '26",
     date: "Wednesday, 28 January 2026",
     time: "10:00 AM – 5:00 PM IST",
-    image: "/workshops/finovva.jpg",
+    image: "/workshops/finovva.JPG",
   },
   {
     title: "Whisper to Command '26",
