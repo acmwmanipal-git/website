@@ -10,16 +10,16 @@ const features = [
   {
     icon: Terminal,
     title: "Kairotic",
-    description: "48-hour online hackathon pushing boundaries of innovation",
+    description: "A 24-hour online hackathon built to push ideas beyond limits",
   },
   {
     icon: Cpu,
     title: "Workshops",
-    description: "Hands-on offline sessions with industry experts",
+    description: "Hands-on offline sessions to create projects",
   },
   {
     icon: Zap,
-    title: "Guest Lectures",
+    title: "Insight Sessions",
     description: "Learn from leaders shaping the tech industry",
   },
 ];
@@ -96,11 +96,12 @@ export default function Home() {
         <section className="w-full py-20 px-4 border-t border-border/50">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="font-display-bold text-3xl sm:text-4xl mb-8">
-              Join the <span className="text-primary">Movement</span>
+              Be Part <span className="text-primary">of the Movement</span>
             </h2>
             <p className="font-mono text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Be part of MIT Manipal&apos;s biggest tech celebration. Build, learn,
-              and connect with like-minded innovators.
+              Be part of MIT Manipal’s biggest tech celebration. Build real solutions,
+learn from experts, and connect with innovators who think like you.
+
             </p>
             <div className="inline-flex items-center gap-4 text-sm font-mono text-muted-foreground">
               <span>JAN 28 - FEB 02, 2026</span>

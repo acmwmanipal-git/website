@@ -10,33 +10,33 @@ import { Button } from "@/components/ui/button";
 const events = [
   {
     title: "Hackathon",
-    image: "/event-hackathon.svg",
+    image: "/event-hack1.png",
     href: "/hackathon",
-    date: "Jan 28 - Feb 02, 2026",
-    type: "Online",
-    description: "48-hour hackathon to build innovative solutions",
+    date: "1st Feb 2026",
+    type: "Offline",
+    description: "24-hour hackathon to build innovative solutions",
   },
   {
     title: "Offline Workshops",
-    image: "/event-workshops.svg",
+    image: "/event-work1.jpg",
     href: "/events/workshops",
-    date: "Jan 28, 2026",
+    date: "Jan 28 - Jan 30,2026",
     type: "Offline",
     description: "Hands-on sessions with industry experts",
   },
   {
     title: "Kaggle Event",
-    image: "/event-kaggle.svg",
+    image: "/event-kaggle1.jpg",
     href: "/events/kaggle",
     date: "Jan 31, 2026",
     type: "Online",
     description: "Data science competition and learning",
   },
   {
-    title: "Guest Lecture",
-    image: "/event-lecture.svg",
+    title: "Insight Session",
+    image: "/guest2.avif",
     href: "/events/lecture",
-    date: "Jan 28, 2026",
+    date: "2nd Feb, 2026",
     type: "Offline",
     description: "Learn from tech industry leaders",
   },
@@ -70,9 +70,10 @@ export default function EventsPage() {
                     <Image
                       src={event.image}
                       alt={event.title}
-                      width={180}
-                      height={180}
-                      className="object-contain"
+                      fill
+    className="object-cover"
+    sizes="(max-width: 768px) 100vw, 50vw"
+    priority
                     />
                     <div className="absolute top-3 left-3">
                       <Badge variant={event.type === "Online" ? "default" : "secondary"} className="mono-label">

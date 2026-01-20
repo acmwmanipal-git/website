@@ -172,7 +172,7 @@ export default function HackathonPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
               <Card className="text-center card-hover bg-card/50 border-border/50">
                 <CardContent className="p-6">
-                  <p className="font-display-bold text-3xl mb-1">48</p>
+                  <p className="font-display-bold text-3xl mb-1">24</p>
                   <p className="mono-label text-muted-foreground">Hours</p>
                 </CardContent>
               </Card>
@@ -184,7 +184,7 @@ export default function HackathonPage() {
               </Card>
               <Card className="text-center card-hover bg-card/50 border-border/50">
                 <CardContent className="p-6">
-                  <p className="font-display-bold text-2xl mb-1">Coming Soon</p>
+                  <p className="font-display-bold text-2xl mb-1">8K</p>
                   <p className="mono-label text-muted-foreground">Prize Pool</p>
                 </CardContent>
               </Card>
@@ -244,10 +244,17 @@ export default function HackathonPage() {
                         </li>
                       ))}
                     </ol>
-                    <Button variant="outline" className="mt-4 w-full mono-label">
-                      <Download className="size-4 mr-2" />
-                      Download PPT Template
-                    </Button>
+                    <a
+  href="https://1drv.ms/p/c/41C5CF3902C4D8FC/IQAC07KCm9qbRL2Fzq5hk450Ad1bmh0gRpuzceHfS9UKuKc?e=oWisFh"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Button variant="outline" className="mt-4 w-full mono-label">
+    <Download className="size-4 mr-2" />
+    Download PPT Template
+  </Button>
+</a>
+
                   </CollapsibleSection>
                 </CardContent>
               </Card>

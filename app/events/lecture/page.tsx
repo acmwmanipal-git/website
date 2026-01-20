@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -14,18 +15,32 @@ export default function LecturePage() {
       <main className="flex-1 pt-20">
         <section className="py-16 px-4">
           <div className="mx-auto max-w-4xl">
+            {/* Header */}
             <div className="text-center mb-12">
               <Badge variant="secondary" className="mb-4 mono-label">
-                GUEST LECTURE
+                Insight Session
               </Badge>
               <h1 className="font-display-bold text-4xl sm:text-5xl md:text-6xl mb-4">
-                Guest Lecture
+                In Conversation With…
               </h1>
               <p className="font-mono text-muted-foreground">
                 Learn from industry leaders and visionaries
               </p>
             </div>
 
+            {/* Hero Image */}
+            <div className="relative w-full aspect-[16/9] mb-12 overflow-hidden rounded-xl">
+              <Image
+                src="/lectures/insight-session.jpg"
+                alt="Insight Session"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-black/30" />
+            </div>
+
+            {/* Date & Time */}
             <Card className="mb-8 bg-card/50 border-border/50">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
@@ -34,11 +49,14 @@ export default function LecturePage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="font-mono text-lg">Wednesday, 28 January 2026</p>
-                <p className="font-mono text-sm text-muted-foreground">2:00 PM - 4:00 PM IST</p>
+                <p className="font-mono text-lg">Wednesday, 2 February 2026</p>
+                <p className="font-mono text-sm text-muted-foreground">
+                  2:00 PM – 4:00 PM IST
+                </p>
               </CardContent>
             </Card>
 
+            {/* Venue */}
             <Card className="mb-8 bg-card/50 border-border/50">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
@@ -48,10 +66,13 @@ export default function LecturePage() {
               </CardHeader>
               <CardContent>
                 <p className="font-mono text-lg">MIT Manipal Campus</p>
-                <p className="font-mono text-sm text-muted-foreground">Seminar Hall, Block 3</p>
+                <p className="font-mono text-sm text-muted-foreground">
+                  Seminar Hall, Block 3
+                </p>
               </CardContent>
             </Card>
 
+            {/* Speaker */}
             <Card className="mb-8 bg-card/50 border-border/50">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
@@ -67,11 +88,12 @@ export default function LecturePage() {
               </CardContent>
             </Card>
 
+            {/* What You'll Learn */}
             <Card className="mb-8 bg-card/50 border-border/50">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Sparkles className="size-5 text-primary" />
-                  What You'll Learn
+                  What You’ll Learn
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -96,9 +118,13 @@ export default function LecturePage() {
               </CardContent>
             </Card>
 
+            {/* Register Button */}
             <div className="text-center">
-              <Button size="lg" className="px-12 py-6 text-lg font-medium card-hover glow-effect mono-label">
-                Register for Lecture
+              <Button
+                size="lg"
+                className="px-12 py-6 text-lg font-medium card-hover glow-effect mono-label"
+              >
+                Register for Session
               </Button>
             </div>
           </div>

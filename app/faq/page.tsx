@@ -53,17 +53,61 @@ function FAQItem({ question, answer }: FAQItemProps) {
 }
 
 const faqs = [
-  { question: "What is ACM-W Tech Week?", answer: "A week-long technical event by ACM-W Manipal." },
-  { question: "Who can participate?", answer: "Open to all students." },
-  { question: "Is Tech Week only for women?", answer: "No, events are open to everyone." },
-  { question: "Is there any registration fee?", answer: "Most events are free." },
-  { question: "How do I register?", answer: "Registration links will be shared." },
-  { question: "Will I receive a certificate?", answer: "Certificates for selected events." },
-  { question: "Do I need prior experience?", answer: "Not mandatory." },
-  { question: "Can I participate in multiple events?", answer: "Yes, if timings don't clash." },
-  { question: "Where will events be conducted?", answer: "Online / Offline / Hybrid." },
-  { question: "How can I contact the organizers?", answer: "Via email or social media." },
-  { question: "Will event updates be shared?", answer: "Yes, via website and socials." },
+  {
+    question: "What is ACM-W Tech Week 2026?",
+    answer:
+      "ACM-W Tech Week 2026 is a multi-day technical event organized by the ACM-W MIT Manipal Chapter. It includes a 24-hour hackathon, offline workshops, expert talks, and competitive learning-based events aimed at encouraging innovation and collaboration."
+  },
+  {
+    question: "Who can participate in ACM-W Tech Week?",
+    answer:
+      "Participation is open exclusively to students of MIT Manipal across all branches and academic years."
+  },
+  {
+    question: "Is Tech Week only for women?",
+    answer:
+      "No. While the event is organized by ACM-W, all Tech Week events are open to participants of all genders."
+  },
+  {
+    question: "Is Tech Week suitable for beginners?",
+    answer:
+      "Yes. Tech Week is designed for students of all skill levels. Beginners are encouraged to participate, as workshops and sessions are structured to be beginner-friendly while still offering value to experienced participants."
+  },
+  {
+    question: "What events are included in Tech Week?",
+    answer:
+      "Tech Week 2026 includes a 24-hour hackathon, offline technical workshops, expert-led insight sessions, and competitive learning events such as Kaggle challenges. Detailed information for each event will be available on the Events page."
+  },
+  {
+    question: "How do I register for Tech Week events?",
+    answer:
+      "Registration links will be available on the respective event pages. Some events may require individual registration, while others may require team registration."
+  },
+  {
+    question: "Can I participate in more than one event?",
+    answer:
+      "Yes, participants may register for multiple events as long as the event timings do not overlap."
+  },
+  {
+    question: "Will participants receive certificates?",
+    answer:
+      "Yes, participation certificates will be provided for selected events. Winners and shortlisted teams may receive additional recognition or certificates."
+  },
+  {
+    question: "Where will the events be conducted?",
+    answer:
+      "Events during Tech Week will be conducted in online, offline, or hybrid modes. The mode of each event will be clearly mentioned on its respective page."
+  },
+  {
+    question: "How will announcements and updates be shared?",
+    answer:
+      "All important updates and announcements will be shared through the official Tech Week website and ACM-W MIT Manipal social media channels."
+  },
+  {
+    question: "Who can I contact for queries or support?",
+    answer:
+          "For any queries or assistance, you can contact the ACM-W MIT Manipal team via email at acmw.manipal@gmail.com or through our official social media channels. You may also reach out to us using the contact numbers provided in the website footer or by submitting the Contact Us form available below on this page."
+  }
 ];
 
 function ContactForm() {

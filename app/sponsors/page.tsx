@@ -7,46 +7,39 @@ import { Badge } from "@/components/ui/badge";
 
 interface Sponsor {
   name: string;
-  subtitle: string;
+  
   logo: string;
 }
 
 const sponsors: Record<string, Sponsor[]> = {
   platinum: [
     {
-      name: "TechCorp",
-      subtitle: "Innovation Partner",
-      logo: "/sponsor-platinum-1.svg",
+      name: "Ribbons & Balloons",
+      logo: "/ribbons&balloons.jpg",
+    },
+    {
+      name: "I-needs Multi Brand Optical Store",
+      logo: "/i-needs.jpeg",
     },
   ],
   gold: [
     {
-      name: "DevStudio",
-      subtitle: "Platform Partner",
-      logo: "/sponsor-gold-1.svg",
+      name: "ZZA BAR",
+      
+      logo: "/zza-2.png",
     },
     {
-      name: "CloudBase",
-      subtitle: "Cloud Partner",
-      logo: "/sponsor-gold-2.svg",
+      name: "SmooCho",
+      
+      logo: "/smoocho.jpg",
     },
   ],
   silver: [
     {
-      name: "CodeLab",
-      subtitle: "Community Partner",
-      logo: "/sponsor-silver-1.svg",
+      name: "FA Mini Mart",
+      logo: "/faMart.jpeg",
     },
-    {
-      name: "ByteWorks",
-      subtitle: "Media Partner",
-      logo: "/sponsor-silver-2.svg",
-    },
-    {
-      name: "DataFlow",
-      subtitle: "Analytics Partner",
-      logo: "/sponsor-silver-3.svg",
-    },
+    
   ],
 };
 
@@ -106,9 +99,7 @@ function SponsorTier({ title, sponsors: tierSponsors, tier }: { title: string; s
                 <h3 className={`font-display-bold text-xl mb-2 ${config.color}`}>
                   {sponsor.name}
                 </h3>
-                <Badge variant="outline" className={`mono-label ${config.badgeColor} border-transparent`}>
-                  {sponsor.subtitle}
-                </Badge>
+                
               </div>
             </CardContent>
           </Card>
@@ -140,9 +131,9 @@ export default function SponsorsPage() {
             </div>
 
             <div className="space-y-16">
-              <SponsorTier title="Platinum Partners" sponsors={sponsors.platinum} tier="platinum" />
-              <SponsorTier title="Gold Partners" sponsors={sponsors.gold} tier="gold" />
-              <SponsorTier title="Silver Partners" sponsors={sponsors.silver} tier="silver" />
+              <SponsorTier title="Title Sponsors" sponsors={sponsors.platinum} tier="platinum" />
+              <SponsorTier title="Co - Sponsors" sponsors={sponsors.gold} tier="gold" />
+              <SponsorTier title="General Sponsors" sponsors={sponsors.silver} tier="silver" />
             </div>
 
             <div className="mt-16 text-center p-8 border border-dashed border-border bg-card/30 rounded-lg">
