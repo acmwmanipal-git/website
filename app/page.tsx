@@ -10,7 +10,7 @@ const features = [
   {
     icon: Terminal,
     title: "Kairotic",
-    description: "A 24-hour online hackathon built to push ideas beyond limits",
+    description: "A 10-hour online hackathon built to push ideas beyond limits",
   },
   {
     icon: Cpu,

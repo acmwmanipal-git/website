@@ -56,7 +56,7 @@ const faqs = [
   {
     question: "What is ACM-W Tech Week 2026?",
     answer:
-      "ACM-W Tech Week 2026 is a multi-day technical event organized by the ACM-W MIT Manipal Chapter. It includes a 24-hour hackathon, offline workshops, expert talks, and competitive learning-based events aimed at encouraging innovation and collaboration."
+      "ACM-W Tech Week 2026 is a multi-day technical event organized by the ACM-W MIT Manipal Chapter. It includes a 10-hour hackathon, offline workshops, expert talks, and competitive learning-based events aimed at encouraging innovation and collaboration."
   },
   {
     question: "Who can participate in ACM-W Tech Week?",
@@ -76,7 +76,7 @@ const faqs = [
   {
     question: "What events are included in Tech Week?",
     answer:
-      "Tech Week 2026 includes a 24-hour hackathon, offline technical workshops, expert-led insight sessions, and competitive learning events such as Kaggle challenges. Detailed information for each event will be available on the Events page."
+      "Tech Week 2026 includes a 10-hour hackathon, offline technical workshops, expert-led insight sessions, and competitive learning events such as Kaggle challenges. Detailed information for each event will be available on the Events page."
   },
   {
     question: "How do I register for Tech Week events?",

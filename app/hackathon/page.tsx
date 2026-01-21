@@ -182,7 +182,7 @@ export default function HackathonPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
               <Card className="text-center card-hover bg-card/50 border-border/50">
                 <CardContent className="p-6">
-                  <p className="font-display-bold text-3xl mb-1">24</p>
+                  <p className="font-display-bold text-3xl mb-1">10</p>
                   <p className="mono-label text-muted-foreground">Hours</p>
                 </CardContent>
               </Card>
@@ -278,7 +278,7 @@ export default function HackathonPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="font-mono text-sm text-muted-foreground mb-4">
-                    Sunday, 1st February 2026 | 9:00 A.M.
+                    Sunday, 1st February 2026 | 8:00 A.M.
                   </p>
                   <div className="p-4 border border-dashed border-border rounded-lg">
                     <p className="font-mono text-sm text-muted-foreground text-center">

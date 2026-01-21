@@ -14,7 +14,7 @@ const events = [
     href: "/hackathon",
     date: "1st Feb 2026",
     type: "Offline",
-    description: "24-hour hackathon to build innovative solutions",
+    description: "10-hour hackathon to build innovative solutions",
   },
   {
     title: "Offline Workshops",
