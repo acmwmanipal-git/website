@@ -162,11 +162,21 @@ export default function HackathonPage() {
                 Build fast. Think smart. Deliver impact.
               </p>
               <div className="mt-8">
-                <Button size="lg" className="px-12 py-6 text-lg font-medium card-hover glow-effect">
-                  Register Now
-                  <ExternalLink className="ml-2 size-5" />
-                </Button>
-              </div>
+  <a
+    href="https://forms.gle/PnPknEVNU33Ce6vd8"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Button
+      size="lg"
+      className="px-12 py-6 text-lg font-medium card-hover glow-effect"
+    >
+      Register Now
+      <ExternalLink className="ml-2 size-5" />
+    </Button>
+  </a>
+</div>
+
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
@@ -233,7 +243,7 @@ export default function HackathonPage() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="font-mono text-sm text-muted-foreground">
-                    Wednesday, 28 January 2026 | 11:59 P.M.
+                    January 24, 11:59 PM – January 27, 11:59 PM
                   </p>
                   <CollapsibleSection title="SUBMISSION GUIDELINES">
                     <ol className="space-y-2">

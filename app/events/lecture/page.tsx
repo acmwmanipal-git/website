@@ -4,7 +4,7 @@ import { Footer } from "@/components/footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin, Mic2, Sparkles } from "lucide-react";
+import { Calendar, MapPin, Mic, Sparkles } from "lucide-react";
 
 export default function LecturePage() {
   return (
@@ -21,17 +21,17 @@ export default function LecturePage() {
                 Insight Session
               </Badge>
               <h1 className="font-display-bold text-4xl sm:text-5xl md:text-6xl mb-4">
-                In Conversation With…
+                In Conversation With Sheel J
               </h1>
               <p className="font-mono text-muted-foreground">
-                Learn from industry leaders and visionaries
+                Founder of Fuggae
               </p>
             </div>
 
             {/* Hero Image */}
             <div className="relative w-full aspect-[16/9] mb-12 overflow-hidden rounded-xl">
               <Image
-                src="/lectures/insight-session.jpg"
+                src="/sheelJ.jpg"
                 alt="Insight Session"
                 fill
                 className="object-cover"
@@ -49,10 +49,8 @@ export default function LecturePage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="font-mono text-lg">Wednesday, 2 February 2026</p>
-                <p className="font-mono text-sm text-muted-foreground">
-                  2:00 PM – 4:00 PM IST
-                </p>
+                <p className="font-mono text-lg">Monday, 2 February 2026</p>
+                
               </CardContent>
             </Card>
 
@@ -65,69 +63,72 @@ export default function LecturePage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="font-mono text-lg">MIT Manipal Campus</p>
-                <p className="font-mono text-sm text-muted-foreground">
-                  Seminar Hall, Block 3
-                </p>
+                <p className="font-mono text-lg">Details will be announced soon.</p>
+                
               </CardContent>
             </Card>
 
             {/* Speaker */}
-            <Card className="mb-8 bg-card/50 border-border/50">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Mic2 className="size-5 text-primary" />
-                  Speaker
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="font-mono text-lg">Coming Soon</p>
-                <p className="font-mono text-sm text-muted-foreground">
-                  Industry expert and technology leader
-                </p>
-              </CardContent>
-            </Card>
+<Card className="mb-8 bg-card/50 border-border/50">
+  <CardHeader>
+    <CardTitle className="flex items-center gap-2">
+      <Mic className="size-5 text-primary" />
+      Speaker
+    </CardTitle>
+  </CardHeader>
+  <CardContent>
+    <p className="font-display-bold text-xl mb-2">
+      Sheel J
+    </p>
+    <p className="font-mono text-sm text-muted-foreground leading-relaxed">
+      Founder, Fuggae <br />
+      Former Senior Product Manager at Amazon <br />
+      Former Engineering Officer at Indian Oil Corporation
+    </p>
+  </CardContent>
+</Card>
+
 
             {/* What You'll Learn */}
-            <Card className="mb-8 bg-card/50 border-border/50">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Sparkles className="size-5 text-primary" />
-                  What You’ll Learn
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 font-mono text-sm text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">▸</span>
-                    Industry trends and insights
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">▸</span>
-                    Career guidance and tips
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">▸</span>
-                    Real-world experiences
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">▸</span>
-                    Q&A and networking
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            {/* Register Button */}
-            <div className="text-center">
-              <Button
-                size="lg"
-                className="px-12 py-6 text-lg font-medium card-hover glow-effect mono-label"
-              >
-                Register for Session
-              </Button>
+<Card className="mb-8 bg-card/50 border-border/50">
+  <CardHeader>
+    <CardTitle className="flex items-center gap-2">
+      <Sparkles className="size-5 text-primary" />
+      What You’ll Learn
+    </CardTitle>
+  </CardHeader>
+  <CardContent>
+    <ul className="space-y-3 font-mono text-sm text-muted-foreground">
+      <li className="flex items-start gap-2">
+        <span className="text-primary">▸</span>
+        Insights from her professional journey and career transitions
+      </li>
+      <li className="flex items-start gap-2">
+        <span className="text-primary">▸</span>
+        Practical strategies for placement preparation and interviews
+      </li>
+      <li className="flex items-start gap-2">
+        <span className="text-primary">▸</span>
+        Real-world industry perspectives from product and engineering roles
+      </li>
+      <li className="flex items-start gap-2">
+        <span className="text-primary">▸</span>
+        Interactive Q&A and networking with the speaker
+      </li>
+    </ul>
+  </CardContent>
+</Card>
+        {/* Coming Soon */}
+            <div className="text-center mt-12">
+              <p className="font-display-bold text-2xl sm:text-3xl text-primary mb-2">
+                Coming Soon
+              </p>
+              <p className="font-mono text-sm text-muted-foreground">
+                Registration details will be announced shortly
+              </p>
             </div>
-          </div>
+
+            </div>
         </section>
       </main>
 

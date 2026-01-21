@@ -25,7 +25,7 @@ const events = [
     description: "Hands-on sessions with industry experts",
   },
   {
-    title: "Kaggle Event",
+    title: "Kaggle Event - TDA",
     image: "/event-kaggle1.jpg",
     href: "/events/kaggle",
     date: "Jan 31, 2026",
@@ -34,11 +34,11 @@ const events = [
   },
   {
     title: "Insight Session",
-    image: "/guest2.avif",
+    image: "/sheelJ.jpg",
     href: "/events/lecture",
     date: "2nd Feb, 2026",
     type: "Offline",
-    description: "Learn from tech industry leaders",
+description: "A guest talk by Sheel J, Founder of Fuggae ",
   },
 ];
 
@@ -59,7 +59,7 @@ export default function EventsPage() {
                 Events
               </h1>
               <p className="font-mono text-muted-foreground">
-                Five days of innovation, learning, and building
+                Six days of innovation, learning, and building
               </p>
             </div>
 

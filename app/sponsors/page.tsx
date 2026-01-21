@@ -33,11 +33,20 @@ const sponsors: Record<string, Sponsor[]> = {
       
       logo: "/smoocho.jpg",
     },
+    {
+      name: "Basil Cafe",
+      
+      logo: "/basilcafe.jpeg",
+    },
   ],
   silver: [
     {
       name: "FA Mini Mart",
       logo: "/faMart.jpeg",
+    },
+    {
+      name: "The Garden Center - Ayush Enterprises",
+      logo: "/gardencenter.jpeg",
     },
     
   ],
