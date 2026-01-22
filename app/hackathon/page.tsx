@@ -61,7 +61,7 @@ function TimeBlock({ value, label }: { value: number; label: string }) {
       <span className="font-mono text-2xl sm:text-3xl font-medium tabular-nums">
         {value.toString().padStart(2, "0")}
       </span>
-      <span className="mono-label text-muted-foreground">{label}</span>
+      <span className="mono-label text-foreground/80">{label}</span>
     </div>
   );
 }
@@ -113,7 +113,15 @@ function ResultsCountdown() {
   );
 }
 
-function CollapsibleSection({ title, children, defaultOpen = false }: { title: string; children: React.ReactNode; defaultOpen?: boolean }) {
+function CollapsibleSection({
+  title,
+  children,
+  defaultOpen = false,
+}: {
+  title: string;
+  children: React.ReactNode;
+  defaultOpen?: boolean;
+}) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
@@ -126,17 +134,16 @@ function CollapsibleSection({ title, children, defaultOpen = false }: { title: s
         {isOpen ? (
           <ChevronUp className="size-5 text-primary" />
         ) : (
-          <ChevronDown className="size-5 text-muted-foreground" />
+          <ChevronDown className="size-5 text-foreground/80" />
         )}
       </button>
-      <div
-        className={cn(
-          "transition-all duration-300 ease-in-out overflow-hidden",
-          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        )}
-      >
-        <div className="p-4 pt-0">{children}</div>
-      </div>
+
+      {/* FIXED CONTENT */}
+      {isOpen && (
+        <div className="p-4 pt-0">
+          {children}
+        </div>
+      )}
     </Card>
   );
 }
@@ -158,7 +165,7 @@ export default function HackathonPage() {
                 <span className="text-primary">Kairo</span>
                 <span className="text-foreground">tic</span>
               </h1>
-              <p className="font-mono text-muted-foreground max-w-2xl mx-auto">
+              <p className="font-mono text-foreground/80 max-w-2xl mx-auto">
                 Build fast. Think smart. Deliver impact.
               </p>
               <div className="mt-8">
@@ -183,25 +190,25 @@ export default function HackathonPage() {
               <Card className="text-center card-hover bg-card/50 border-border/50">
                 <CardContent className="p-6">
                   <p className="font-display-bold text-3xl mb-1">10</p>
-                  <p className="mono-label text-muted-foreground">Hours</p>
+                  <p className="mono-label text-foreground/80">Hours</p>
                 </CardContent>
               </Card>
               <Card className="text-center card-hover bg-card/50 border-border/50">
                 <CardContent className="p-6">
                   <p className="font-display-bold text-3xl mb-1">2-4</p>
-                  <p className="mono-label text-muted-foreground">Team Size</p>
+                  <p className="mono-label text-foreground/80">Team Size</p>
                 </CardContent>
               </Card>
               <Card className="text-center card-hover bg-card/50 border-border/50">
                 <CardContent className="p-6">
                   <p className="font-display-bold text-2xl mb-1">8K</p>
-                  <p className="mono-label text-muted-foreground">Prize Pool</p>
+                  <p className="mono-label text-foreground/80">Prize Pool</p>
                 </CardContent>
               </Card>
               <Card className="text-center card-hover bg-card/50 border-border/50">
                 <CardContent className="p-6">
                   <p className="font-display-bold text-3xl mb-1">2</p>
-                  <p className="mono-label text-muted-foreground">Rounds</p>
+                  <p className="mono-label text-foreground/80">Rounds</p>
                 </CardContent>
               </Card>
             </div>
@@ -213,7 +220,7 @@ export default function HackathonPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground leading-relaxed font-mono text-sm">
+                <p className="text-foreground/80 leading-relaxed font-mono text-base">
                   A fast-paced, online hackathon designed for builders, thinkers, and innovators.
                   Open to students of all skill levels, the event challenges teams to create
                   real-world tech solutions across two competitive rounds. Think smart, build fast,
@@ -225,7 +232,7 @@ export default function HackathonPage() {
             <CollapsibleSection title="RULES" defaultOpen>
               <ol className="space-y-3">
                 {rules.map((rule, index) => (
-                  <li key={index} className="flex gap-3 text-sm text-muted-foreground font-mono items-start">
+                  <li key={index} className="flex gap-3 text-base text-foreground/80 font-mono items-start">
                     <span className="font-mono text-primary select-none mt-0.5">{index + 1}.</span>
                     <span>{rule}</span>
                   </li>
@@ -242,13 +249,13 @@ export default function HackathonPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <p className="font-mono text-sm text-muted-foreground">
+                  <p className="font-mono text-base text-foreground/80">
                     January 24, 11:59 PM – January 27, 11:59 PM
                   </p>
                   <CollapsibleSection title="SUBMISSION GUIDELINES">
                     <ol className="space-y-2">
                       {submissionGuidelines.map((item, index) => (
-                        <li key={index} className="flex gap-2 text-sm text-muted-foreground font-mono items-start">
+                        <li key={index} className="flex gap-2 text-base text-foreground/80 font-mono items-start">
                           <span className="text-primary">▸</span>
                           <span>{item}</span>
                         </li>
@@ -277,11 +284,11 @@ export default function HackathonPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="font-mono text-sm text-muted-foreground mb-4">
+                  <p className="font-mono text-base text-foreground/80 mb-4">
                     Sunday, 1st February 2026 | 8:00 A.M.
                   </p>
                   <div className="p-4 border border-dashed border-border rounded-lg">
-                    <p className="font-mono text-sm text-muted-foreground text-center">
+                    <p className="font-mono text-base text-foreground/80 text-center">
                       Details for Round 2 will be announced after Round 1 results.
                     </p>
                   </div>
@@ -312,7 +319,7 @@ export default function HackathonPage() {
                 <div className="text-center">
                   <p className="mono-label text-primary mb-4">ROUND 1 RESULTS</p>
                   <ResultsCountdown />
-                  <p className="font-mono text-sm text-muted-foreground mt-4">
+                  <p className="font-mono text-base text-foreground/80 mt-4">
                     30 January 2026 · 9:00 AM IST
                   </p>
                 </div>

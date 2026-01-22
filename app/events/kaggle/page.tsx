@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Trophy, Target, BarChart } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function KagglePage() {
   return (
@@ -18,8 +19,8 @@ export default function KagglePage() {
               <Badge variant="secondary" className="mb-4 mono-label">
                 DATA SCIENCE
               </Badge>
-              <h1 className="font-display-bold text-4xl sm:text-5xl md:text-6xl mb-4">
-                Kaggle Event - TDA
+              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl mb-4">
+                Clash Codale | Kaggle Contest
               </h1>
               <p className="font-mono text-muted-foreground">
                 Compete, learn, and master data science
@@ -30,7 +31,7 @@ export default function KagglePage() {
             <Card className="mb-8 bg-card/50 border-border/50">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Calendar className="size-5 text-primary" />
+                  <Calendar className="size-7 text-primary" />
                   Date & Time
                 </CardTitle>
               </CardHeader>
@@ -74,7 +75,7 @@ export default function KagglePage() {
                 <CardTitle>About the Event</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="font-mono text-sm text-muted-foreground leading-relaxed">
+                <p className="font-mono text-base text-muted-foreground leading-relaxed">
                   Join us for an intensive data science competition where participants work
                   with real-world datasets, build predictive models, and compete for exciting
                   prizes. This event is designed to encourage learning, experimentation, and
@@ -83,15 +84,28 @@ export default function KagglePage() {
               </CardContent>
             </Card>
 
-            {/* Coming Soon */}
-            <div className="text-center mt-12">
-              <p className="font-display-bold text-2xl sm:text-3xl text-primary mb-2">
-                Coming Soon
-              </p>
-              <p className="font-mono text-sm text-muted-foreground">
-                Registration details will be announced shortly
-              </p>
-            </div>
+           {/* Registration */}
+<div className="text-center mt-12">
+  
+
+  <a
+    href="https://forms.gle/gCe2A39WzffDFZur6"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Button
+      size="lg"
+      className="px-10 py-5 text-lg font-medium card-hover glow-effect"
+    >
+      Register via Kairos Form
+    </Button>
+  </a>
+
+  <p className="font-mono text-base text-muted-foreground mt-4 max-w-md mx-auto">
+    While filling the Kairos registration form, select <span className="text-foreground">“Yes”</span> for <span className="text-foreground">Clash Codale</span>.
+  </p>
+</div>
+
           </div>
         </section>
       </main>

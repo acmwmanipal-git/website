@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 
 const events = [
   {
-    title: "Hackathon",
+    title: "Kairotic: The Kairos Hackathon",
     image: "/event-hack1.png",
     href: "/hackathon",
     date: "1st Feb 2026",
@@ -25,7 +25,7 @@ const events = [
     description: "Hands-on sessions with industry experts",
   },
   {
-    title: "Kaggle Event - TDA",
+    title: "Clash Codale | Kaggle Contest",
     image: "/event-kaggle1.jpg",
     href: "/events/kaggle",
     date: "Jan 31, 2026",
@@ -38,7 +38,7 @@ const events = [
     href: "/events/lecture",
     date: "2nd Feb, 2026",
     type: "Offline",
-description: "A guest talk by Sheel J, Founder of Fuggae ",
+description: "A guest talk by Sheel Jaitley, Founder of Fuggae ",
   },
 ];
 
@@ -82,14 +82,14 @@ export default function EventsPage() {
                     </div>
                   </div>
                   <CardHeader>
-                    <CardTitle className="font-display-bold text-xl">{event.title}</CardTitle>
+                    <CardTitle className="font-display text-xl">{event.title}</CardTitle>
                     <CardDescription className="font-mono flex items-center gap-2">
-                      <Calendar className="size-3" />
+                      <Calendar className="size-5" />
                       {event.date}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="font-mono text-sm text-muted-foreground">
+                    <p className="font-mono text-base text-muted-foreground">
                       {event.description}
                     </p>
                   </CardContent>

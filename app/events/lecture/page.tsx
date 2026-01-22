@@ -21,7 +21,7 @@ export default function LecturePage() {
                 Insight Session
               </Badge>
               <h1 className="font-display-bold text-4xl sm:text-5xl md:text-6xl mb-4">
-                In Conversation With Sheel J
+                In Conversation With Sheel Jaitley
               </h1>
               <p className="font-mono text-muted-foreground">
                 Founder of Fuggae
@@ -49,8 +49,12 @@ export default function LecturePage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="font-mono text-lg">Monday, 2 February 2026</p>
-                
+                <p className="font-mono text-lg">
+                  Monday, 2 February 2026
+                </p>
+                <p className="font-mono text-lg text-muted-foreground">
+                  5:00 PM – 7:30 PM
+                </p>
               </CardContent>
             </Card>
 
@@ -63,72 +67,76 @@ export default function LecturePage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="font-mono text-lg">Details will be announced soon.</p>
-                
+                <p className="font-mono text-lg">KEF Auditorium</p>
               </CardContent>
             </Card>
 
             {/* Speaker */}
-<Card className="mb-8 bg-card/50 border-border/50">
-  <CardHeader>
-    <CardTitle className="flex items-center gap-2">
-      <Mic className="size-5 text-primary" />
-      Speaker
-    </CardTitle>
-  </CardHeader>
-  <CardContent>
-    <p className="font-display-bold text-xl mb-2">
-      Sheel J
-    </p>
-    <p className="font-mono text-sm text-muted-foreground leading-relaxed">
-      Founder, Fuggae <br />
-      Former Senior Product Manager at Amazon <br />
-      Former Engineering Officer at Indian Oil Corporation
-    </p>
-  </CardContent>
-</Card>
-
+            <Card className="mb-8 bg-card/50 border-border/50">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Mic className="size-5 text-primary" />
+                  Speaker
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="font-display text-xl mb-2">
+                  Sheel Jaitley
+                </p>
+                <p className="font-mono text-base text-muted-foreground leading-relaxed">
+                  Founder, Fuggae <br />
+                  Former Senior Product Manager at Amazon <br />
+                  Former Engineering Officer at Indian Oil Corporation
+                </p>
+              </CardContent>
+            </Card>
 
             {/* What You'll Learn */}
-<Card className="mb-8 bg-card/50 border-border/50">
-  <CardHeader>
-    <CardTitle className="flex items-center gap-2">
-      <Sparkles className="size-5 text-primary" />
-      What You’ll Learn
-    </CardTitle>
-  </CardHeader>
-  <CardContent>
-    <ul className="space-y-3 font-mono text-sm text-muted-foreground">
-      <li className="flex items-start gap-2">
-        <span className="text-primary">▸</span>
-        Insights from her professional journey and career transitions
-      </li>
-      <li className="flex items-start gap-2">
-        <span className="text-primary">▸</span>
-        Practical strategies for placement preparation and interviews
-      </li>
-      <li className="flex items-start gap-2">
-        <span className="text-primary">▸</span>
-        Real-world industry perspectives from product and engineering roles
-      </li>
-      <li className="flex items-start gap-2">
-        <span className="text-primary">▸</span>
-        Interactive Q&A and networking with the speaker
-      </li>
-    </ul>
-  </CardContent>
-</Card>
-        {/* Coming Soon */}
-            <div className="text-center mt-12">
-              <p className="font-display-bold text-2xl sm:text-3xl text-primary mb-2">
-                Coming Soon
-              </p>
-              <p className="font-mono text-sm text-muted-foreground">
-                Registration details will be announced shortly
-              </p>
-            </div>
+            <Card className="mb-8 bg-card/50 border-border/50">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Sparkles className="size-5 text-primary" />
+                  What You’ll Learn
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 font-mono text-base text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">▸</span>
+                    Insights from her professional journey and career transitions
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">▸</span>
+                    Practical strategies for placement preparation and interviews
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">▸</span>
+                    Real-world industry perspectives from product and engineering roles
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">▸</span>
+                    Interactive Q&A and networking with the speaker
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
 
+            {/* Registration */}
+            <div className="text-center mt-12">
+              <a
+                href="https://forms.gle/myRquDBNuih39kbm8"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  size="lg"
+                  className="px-12 py-6 text-lg font-medium card-hover glow-effect"
+                >
+                  Register for Insight Session
+                </Button>
+              </a>
             </div>
+          </div>
         </section>
       </main>
 
