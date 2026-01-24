@@ -147,6 +147,62 @@ function CollapsibleSection({
     </Card>
   );
 }
+function ProblemStatements() {
+  const [released, setReleased] = useState(false);
+
+  useEffect(() => {
+    const releaseTime = new Date("2026-01-24T23:59:00+05:30");
+
+    const checkTime = () => {
+      const now = new Date(
+        new Date().toLocaleString("en-US", {
+          timeZone: "Asia/Kolkata",
+        })
+      );
+      setReleased(now >= releaseTime);
+    };
+
+    checkTime();
+    const interval = setInterval(checkTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  if (!released) {
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[1, 2, 3].map((num) => (
+          <div
+            key={num}
+            className="p-8 border border-border/50 rounded-lg flex items-center justify-center"
+          >
+            <p className="font-display-bold text-xl text-primary">
+              Coming Soon
+            </p>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  return (
+    <div className="text-center">
+      <p className="font-display-bold text-xl text-primary mb-4">
+        Problem Statements are Live 
+      </p>
+
+      <a
+        href="/problemStatement.docx"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Button size="lg" className="mono-label">
+          <Download className="size-5 mr-2" />
+          Download Problem Statements
+        </Button>
+      </a>
+    </div>
+  );
+}
 
 export default function HackathonPage() {
   return (
@@ -296,23 +352,18 @@ export default function HackathonPage() {
               </Card>
             </div>
 
-            <Card className="mt-8 bg-card/50 border-border/50">
-              <CardHeader>
-                <CardTitle className="font-display-bold text-2xl">PROBLEM STATEMENTS</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {[1, 2, 3].map((num) => (
-                    <div
-                      key={num}
-                      className="p-8 border border-border/50 rounded-lg hover:border-primary/50 transition-colors flex items-center justify-center"
-                    >
-                      <p className="font-display-bold text-xl text-primary">Coming Soon</p>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+           {/* PROBLEM STATEMENTS */}
+<Card className="mt-8 bg-card/50 border-border/50">
+  <CardHeader>
+    <CardTitle className="font-display-bold text-2xl">
+      PROBLEM STATEMENTS
+    </CardTitle>
+  </CardHeader>
+
+  <CardContent>
+    <ProblemStatements />
+  </CardContent>
+</Card>
 
             <Card className="mt-8 bg-primary/5 border-primary/30">
               <CardContent className="p-8">
