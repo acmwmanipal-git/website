@@ -38,8 +38,6 @@ const sponsors: Record<string, Sponsor[]> = {
       
       logo: "/basilcafe.jpeg",
     },
-  ],
-  silver: [
     {
       name: "FA Mini Mart",
       logo: "/faMart.jpeg",
@@ -48,8 +46,8 @@ const sponsors: Record<string, Sponsor[]> = {
       name: "The Garden Center - Ayush Enterprises",
       logo: "/gardencenter.jpeg",
     },
-    
   ],
+  
 };
 
 const tierConfig = {
@@ -69,14 +67,7 @@ const tierConfig = {
     badgeColor: "bg-yellow-500 text-black",
     gridCols: "md:grid-cols-2 lg:grid-cols-3",
   },
-  silver: {
-    icon: Star,
-    color: "text-slate-400",
-    borderColor: "border-slate-500/30",
-    bgColor: "bg-slate-500/5",
-    badgeColor: "bg-slate-500 text-white",
-    gridCols: "md:grid-cols-2 lg:grid-cols-3",
-  },
+  
 };
 
 function SponsorTier({ title, sponsors: tierSponsors, tier }: { title: string; sponsors: Sponsor[]; tier: keyof typeof tierConfig }) {
@@ -140,9 +131,9 @@ export default function SponsorsPage() {
             </div>
 
             <div className="space-y-16">
-              <SponsorTier title="Title Sponsors" sponsors={sponsors.platinum} tier="platinum" />
+              <SponsorTier title=" Sponsors" sponsors={sponsors.platinum} tier="platinum" />
               <SponsorTier title="Co - Sponsors" sponsors={sponsors.gold} tier="gold" />
-              <SponsorTier title="General Sponsors" sponsors={sponsors.silver} tier="silver" />
+             
             </div>
 
             <div className="mt-16 text-center p-8 border border-dashed border-border bg-card/30 rounded-lg">

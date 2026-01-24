@@ -48,11 +48,13 @@ function Separator() {
 }
 
 function CountdownDisplay() {
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>(() => calculateTimeLeft(new Date("2026-01-28T00:00:00")));
+  const targetDate = new Date("2026-01-28T00:00:00");
+
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(() =>
+    calculateTimeLeft(targetDate)
+  );
 
   useEffect(() => {
-    const targetDate = new Date("2026-01-28T00:00:00");
-
     const updateTimer = () => {
       setTimeLeft(calculateTimeLeft(targetDate));
     };
@@ -61,6 +63,21 @@ function CountdownDisplay() {
     return () => clearInterval(interval);
   }, []);
 
+  // ✅ WHEN TIMER IS OVER
+  if (
+    timeLeft.days === 0 &&
+    timeLeft.hours === 0 &&
+    timeLeft.minutes === 0 &&
+    timeLeft.seconds === 0
+  ) {
+    return (
+      <p className="font-display-bold text-3xl sm:text-4xl md:text-5xl text-primary">
+         Tech Week is Live
+      </p>
+    );
+  }
+
+  // ⏱ NORMAL COUNTDOWN
   return (
     <div className="flex items-center gap-2 sm:gap-4">
       <TimeBlock value={timeLeft.days} label="Days" />
