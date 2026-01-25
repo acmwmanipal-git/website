@@ -191,7 +191,7 @@ function ProblemStatements() {
       </p>
 
       <a
-        href="/problemStatement.docx"
+        href="/Round1.pdf"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -300,8 +300,10 @@ export default function HackathonPage() {
               <Card className="bg-card/50 border-border/50">
                 <CardHeader>
                   <CardTitle>
-                    <span className="mono-label text-primary block mb-2">ROUND 1</span>
-                    <span className="font-display-bold text-2xl">COMING SOON</span>
+                    <span className="font-display-bold text-2xl text-primary">
+  ROUND 1 — LIVE
+</span>
+
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
