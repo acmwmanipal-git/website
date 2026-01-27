@@ -50,7 +50,7 @@ const sponsors: Record<string, Sponsor[]> = {
   ],
   eventPartners: [
   {
-    name: "Photography Club Manipal",
+    name: "The Photography Club Manipal",
     logo: "/photographyclubmanipal.png",
   },
 ],
