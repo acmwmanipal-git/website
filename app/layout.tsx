@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   title: "KairOS | ACMW Tech Week 2026",
   description: "KairOS - CODE_THE_MOMENT | ACMW MIT Manipal Tech Week 2026",
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: "/ACMW-logo.png",
+    shortcut: "/ACMW-logo.png",
   },
 };
 
