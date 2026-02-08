@@ -11,7 +11,6 @@ import {
   ChevronUp,
   CalendarDays,
   Clock,
-  Mail,
 } from "lucide-react";
 
 /* ---------------- RULES ---------------- */
@@ -45,6 +44,41 @@ const round1Results = [
   { code: "KT2619", name: "Three Musketeers" },
 ];
 
+/* ---------------- FINAL RESULTS ---------------- */
+
+const finalResults = [
+  {
+    place: "1st Place",
+    team: "TensorZ",
+    members: [
+      "Krishna Anand",
+      "Ashna Manowar",
+      "Varanasi Naga Akhil",
+    ],
+    highlight: "gold",
+  },
+  {
+    place: "2nd Place",
+    team: "BratzCode",
+    members: [
+      "Gahna Bisht",
+      "Aadya Chhavi Mishra",
+      "Prisha Maurya",
+      "Ankila Bajaj",
+    ],
+    highlight: "silver",
+  },
+  {
+    place: "3rd Place",
+    team: "Dronaid",
+    members: [
+      "Aditya Javvaji",
+      "Mahek Gupta",
+    ],
+    highlight: "bronze",
+  },
+];
+
 /* ---------------- COLLAPSIBLE ---------------- */
 
 function CollapsibleSection({
@@ -76,7 +110,10 @@ function CollapsibleSection({
 
 function Round1Results() {
   return (
-    <CollapsibleSection title="ROUND 1 RESULTS — QUALIFIED TEAMS" defaultOpen>
+    <CollapsibleSection
+      title="ROUND 1 RESULTS — QUALIFIED TEAMS"
+      defaultOpen
+    >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {round1Results.map((team) => (
           <Card
@@ -97,6 +134,51 @@ function Round1Results() {
     </CollapsibleSection>
   );
 }
+
+/* ---------------- FINAL RESULTS ---------------- */
+
+function FinalResults() {
+  return (
+    <CollapsibleSection title="FINAL ROUND RESULTS — WINNERS" defaultOpen>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {finalResults.map((result) => (
+          <Card
+            key={result.team}
+            className="bg-muted/30 border-border/40 hover:shadow-lg transition"
+          >
+            <CardHeader className="space-y-2">
+              <Badge
+                className={`w-fit ${
+                  result.highlight === "gold"
+                    ? "bg-yellow-500/10 text-yellow-400"
+                    : result.highlight === "silver"
+                    ? "bg-gray-400/10 text-gray-300"
+                    : "bg-orange-500/10 text-orange-400"
+                }`}
+              >
+                {result.place}
+              </Badge>
+
+              <CardTitle className="text-2xl">
+                {result.team}
+              </CardTitle>
+            </CardHeader>
+
+            <CardContent className="font-mono text-lg space-y-2">
+              <p className="text-muted-foreground">Team Members:</p>
+              <ul className="list-disc list-inside space-y-1">
+                {result.members.map((member) => (
+                  <li key={member}>{member}</li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </CollapsibleSection>
+  );
+}
+
 /* ---------------- ROADMAP ---------------- */
 
 function HackathonRoadmap() {
@@ -107,12 +189,11 @@ function HackathonRoadmap() {
       description: "Teams submitted their solutions for evaluation.",
       color: "green",
     },
-    
     {
-      status: "UPCOMING",
+      status: "COMPLETED",
       title: "Final Round · On-Campus",
       description:
-        "Qualified teams have been emailed with detailed instructions regarding the final round.",
+        "Top teams competed on campus and presented their solutions to the judges.",
       date: "Sunday, 1st February 2026",
       time: "8:00 A.M. onwards",
       color: "primary",
@@ -126,7 +207,6 @@ function HackathonRoadmap() {
       </h2>
 
       <div className="relative max-w-3xl mx-auto">
-        {/* Vertical line */}
         <div className="absolute left-5 top-0 h-full w-[2px] bg-border" />
 
         <div className="space-y-12">
@@ -139,7 +219,6 @@ function HackathonRoadmap() {
               viewport={{ once: true }}
               className="relative flex gap-8"
             >
-              {/* Dot */}
               <div
                 className={`w-10 h-10 rounded-full flex items-center justify-center border-4
                 ${
@@ -149,7 +228,6 @@ function HackathonRoadmap() {
                 }`}
               />
 
-              {/* Card */}
               <Card className="flex-1 bg-card/60 border-border/50">
                 <CardHeader>
                   <Badge
@@ -204,7 +282,6 @@ export default function HackathonPage() {
         <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
 
-            {/* HEADER */}
             <div className="text-center mb-16">
               <Badge className="mb-4">HACKATHON</Badge>
               <h1 className="text-6xl font-display-bold mb-4">
@@ -215,7 +292,6 @@ export default function HackathonPage() {
               </p>
             </div>
 
-            {/* RULES */}
             <CollapsibleSection title="RULES">
               <ol className="space-y-3 font-mono text-lg">
                 {rules.map((rule, i) => (
@@ -227,12 +303,9 @@ export default function HackathonPage() {
               </ol>
             </CollapsibleSection>
 
-            {/* ROUND 1 RESULTS */}
             <Round1Results />
-
-            {/* HACKATHON ROADMAP */}
-<HackathonRoadmap />
-
+            <FinalResults />
+            <HackathonRoadmap />
 
           </div>
         </section>

@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ArrowRight, Terminal, Cpu, Zap } from "lucide-react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { Countdown } from "@/components/countdown";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -36,7 +35,7 @@ export default function Home() {
 
           <div className="mx-auto max-w-5xl text-center relative z-10">
             <Badge variant="secondary" className="mb-6 mono-label">
-              ACMW MIT MANIPAL TECH WEEK 2026
+              ACM-W MIT MANIPAL · TECH WEEK 2026
             </Badge>
 
             <h1 className="font-display-bold text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tight mb-6 text-shadow">
@@ -48,16 +47,14 @@ export default function Home() {
               &lt;CODE_THE_MOMENT /&gt;
             </p>
 
-            <div className="mt-12 flex justify-center">
-              <Countdown />
-            </div>
+            {/* Removed Countdown (Tech Week is over) */}
 
             <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/hackathon"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-all duration-300 card-hover"
               >
-                Start Building
+                View Hackathon
                 <ArrowRight className="size-4" />
               </Link>
               <Link
@@ -100,8 +97,7 @@ export default function Home() {
             </h2>
             <p className="font-mono text-muted-foreground mb-8 max-w-2xl mx-auto">
               Be part of MIT Manipal’s biggest tech celebration. Build real solutions,
-learn from experts, and connect with innovators who think like you.
-
+              learn from experts, and connect with innovators who think like you.
             </p>
             <div className="inline-flex items-center gap-4 text-sm font-mono text-muted-foreground">
               <span>JAN 28 - FEB 02, 2026</span>

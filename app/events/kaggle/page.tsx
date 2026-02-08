@@ -3,7 +3,6 @@ import { Footer } from "@/components/footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Trophy, Target, BarChart } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export default function KagglePage() {
   return (
@@ -63,7 +62,7 @@ export default function KagglePage() {
               <Card className="bg-card/50 border-border/50">
                 <CardContent className="p-6 text-center">
                   <BarChart className="size-8 text-primary mx-auto mb-3" />
-                  <p className="font-display-bold text-2xl mb-1">Learn</p>
+                  <p className="font-display-bold text-2xl mb-1">Hands-on</p>
                   <p className="mono-label text-muted-foreground">ML Skills</p>
                 </CardContent>
               </Card>
@@ -76,36 +75,15 @@ export default function KagglePage() {
               </CardHeader>
               <CardContent>
                 <p className="font-mono text-base text-muted-foreground leading-relaxed">
-                  Join us for an intensive data science competition where participants work
-                  with real-world datasets, build predictive models, and compete for exciting
-                  prizes. This event is designed to encourage learning, experimentation, and
+                  Clash Codale was an intensive data science competition where participants
+                  worked with real-world datasets, built predictive models, and competed for
+                  exciting prizes. The contest encouraged learning, experimentation, and
                   practical exposure to machine learning using Kaggle.
                 </p>
               </CardContent>
             </Card>
 
-           {/* Registration */}
-<div className="text-center mt-12">
-  
-
-  <a
-    href="https://forms.gle/gCe2A39WzffDFZur6"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <Button
-      size="lg"
-      className="px-10 py-5 text-lg font-medium card-hover glow-effect"
-    >
-      Register via Kairos Form
-    </Button>
-  </a>
-
-  <p className="font-mono text-base text-muted-foreground mt-4 max-w-md mx-auto">
-    While filling the Kairos registration form, select <span className="text-foreground">“Yes”</span> for <span className="text-foreground">Clash Codale</span>.
-  </p>
-</div>
-
+            
           </div>
         </section>
       </main>

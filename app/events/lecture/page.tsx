@@ -121,21 +121,7 @@ export default function LecturePage() {
               </CardContent>
             </Card>
 
-            {/* Registration */}
-            <div className="text-center mt-12">
-              <a
-                href="https://forms.gle/myRquDBNuih39kbm8"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  size="lg"
-                  className="px-12 py-6 text-lg font-medium card-hover glow-effect"
-                >
-                  Register for Insight Session
-                </Button>
-              </a>
-            </div>
+            
           </div>
         </section>
       </main>

@@ -2,7 +2,6 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 
 const workshops = [
   {
@@ -11,7 +10,7 @@ const workshops = [
     date: "Wednesday, 28th January 2026",
     time: "5:00 PM – 8:00 PM IST",
     description:
-      "This workshop offers a hands-on introduction to cloud computing, covering fundamentals like deployment (public, private, hybrid), and service models (IaaS, PaaS, SaaS), culminating in a practical AWS project where participants apply these concepts directly to build and understand cloud solutions in real-time. ",
+      "This workshop offered a hands-on introduction to cloud computing, covering fundamentals like deployment (public, private, hybrid), and service models (IaaS, PaaS, SaaS), culminating in a practical AWS project where participants applied these concepts directly to build and understand cloud solutions in real-time.",
   },
   {
     title: "Finova – FinAgent",
@@ -19,7 +18,7 @@ const workshops = [
     date: "Thursday, 29th January 2026",
     time: "5:00 PM – 8:00 PM IST",
     description:
-      "Most AI workshops stop at chatbots. Most finance workshops stop at theory. This workshop bridges both. Participants will build an autonomous financial analyst that fetches live market data, reads news, reasons over it, and delivers investment insights.",
+      "This workshop bridged AI and finance. Participants built an autonomous financial analyst that fetched live market data, read news, reasoned over it, and delivered investment insights.",
   },
   {
     title: "LeanIn – VoiceCraft AI",
@@ -27,9 +26,8 @@ const workshops = [
     date: "Friday, 30th January 2026",
     time: "5:00 PM – 8:00 PM IST",
     description:
-      "This workshop focuses on building a Desktop AI Assistant using Python, capable of performing voice-based and text-based interactions, system automation, web navigation , and messaging automation. Participants focus on core AI logic and integration through live coding..",
+      "This workshop focused on building a Desktop AI Assistant using Python, capable of voice-based and text-based interactions, system automation, web navigation, and messaging automation through live coding.",
   },
-  
 ];
 
 export default function WorkshopsPage() {
@@ -84,19 +82,7 @@ export default function WorkshopsPage() {
               ))}
             </div>
 
-            {/* CTA */}
-<div className="text-center mt-20">
-  <a
-    href="https://forms.gle/gCe2A39WzffDFZur6"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <Button className="mono-label px-16 py-6 text-lg">
-      Register for All Workshops
-    </Button>
-  </a>
-</div>
-
+            
           </div>
         </section>
       </main>
