@@ -1,0 +1,16 @@
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  z-index: 9999;
+}
+
+.click-zone {
+  flex: 1;
+  background: rgba(255, 0, 0, 0.1);  /* 🔥 TEST */
+}.circular-gallery canvas {
+  pointer-events: none;   /* 🔥 THIS IS THE REAL FIX */
+}
+canvas {
+  pointer-events: none !important;
+}

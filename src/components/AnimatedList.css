@@ -1,0 +1,45 @@
+.scroll-list-container {
+  position: relative;
+  width: 200px;
+}
+
+.scroll-list {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+/* ITEM */
+.item {
+  padding: 12px;
+  background-color: #112240;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.item.selected {
+  background-color: #64ffda;
+}
+
+.item-text {
+  color: white;
+  margin: 0;
+  text-align: center;
+}
+
+/* GRADIENTS */
+.top-gradient {
+  position: absolute;
+  top: 0;
+  height: 40px;
+  width: 100%;
+  background: linear-gradient(to bottom, #020c1b, transparent);
+}
+
+.bottom-gradient {
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  background: linear-gradient(to top, #020c1b, transparent);
+}
