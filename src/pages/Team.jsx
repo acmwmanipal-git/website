@@ -500,6 +500,7 @@ const BoardCard = ({ board, isCurrent = false }) => (
 
 const Team = () => {
   const [viewMode, setViewMode] = useState("current");
+  const [activeAccordionIndex, setActiveAccordionIndex] = useState(0);
   const [viewportWidth, setViewportWidth] = useState(() =>
     typeof window === "undefined" ? 1200 : window.innerWidth
   );
@@ -513,23 +514,24 @@ const Team = () => {
 
   const currentBoard = boards[0];
   const pastBoards = boards.slice(1);
+  const useAccordion = viewportWidth < 1200;
 
   const cardSwapDimensions = useMemo(() => {
   if (viewportWidth < 640) {
     return {
       width: Math.min(viewportWidth - 32, 360),
-      height: 750,
+      height: 620,
       cardDistance: 8,
-      verticalDistance: 12
+      verticalDistance: 10
     };
   }
 
   if (viewportWidth < 960) {
     return {
       width: Math.min(viewportWidth - 48, 720),
-      height: 700,
+      height: 660,
       cardDistance: 12,
-      verticalDistance: 16
+      verticalDistance: 14
     };
   }
 
@@ -576,70 +578,156 @@ const Team = () => {
           </section>
         ) : (
           <section className="past-boards-section">
-            <CardSwap
-              width={cardSwapDimensions.width}
-              height={cardSwapDimensions.height}
-              cardDistance={cardSwapDimensions.cardDistance}
-              verticalDistance={cardSwapDimensions.verticalDistance}
-            >
-              {pastBoards.map((board) => (
-                <Card key={board.year} customClass="team-card">
-  <div className="bookmark">{board.year}</div>
+            {useAccordion ? (
+              <div className="team-accordion">
+                {pastBoards.map((board, boardIndex) => {
+                  const isOpen = activeAccordionIndex === boardIndex;
 
-  <div className="board-card-header">
-    <div>
-      <p className="board-eyebrow">Board Archive</p>
-      <h2 className="year">{board.year}</h2>
-    </div>
-    <p className="board-member-count">{board.members.length} members</p>
-  </div>
+                  return (
+                    <div
+                      key={board.year}
+                      className={`team-board-shell team-accordion-item ${isOpen ? "current-board-shell open" : ""}`}
+                    >
+                      <button
+                        type="button"
+                        className="team-toggle-button"
+                        aria-expanded={isOpen}
+                        aria-controls={`board-panel-${boardIndex}`}
+                        onClick={() =>
+                          setActiveAccordionIndex((currentIndex) =>
+                            currentIndex === boardIndex ? -1 : boardIndex
+                          )
+                        }
+                      >
+                        <div className="bookmark">{board.year}</div>
 
-  <div className="members-grid">
-    {board.members.map((member, index) => (
-      <div key={`${board.year}-${member.name}-${index}`} className="profile-card">
+                        <div className="board-card-header">
+                          <div>
+                            <p className="board-eyebrow">Board Archive</p>
+                            <h2 className="year">{board.year}</h2>
+                          </div>
+                          <p className="board-member-count">{board.members.length} members</p>
+                        </div>
+                      </button>
 
-        <div className="profile-image-wrap">
-          <img
-            src={member.img || `https://ui-avatars.com/api/?name=${member.name}`}
-            className="profile-img"
-          />
-        </div>
+                      <div
+                        id={`board-panel-${boardIndex}`}
+                        className={`team-accordion-panel ${isOpen ? "open" : ""}`}
+                      >
+                        <div className="members-grid">
+                          {board.members.map((member, index) => (
+                            <div key={`${board.year}-${member.name}-${index}`} className="profile-card">
+                              <div className="profile-image-wrap">
+                                <img
+                                  src={member.img || `https://ui-avatars.com/api/?name=${member.name}`}
+                                  alt={member.name}
+                                  className="profile-img"
+                                />
+                              </div>
 
-        <div className="profile-content">
-  <h3>{member.name}</h3>
-  <p className="role">{member.role}</p>
-</div>
+                              <div className="profile-content">
+                                <h3>{member.name}</h3>
+                                <p className="role">{member.role}</p>
+                              </div>
 
-<div className="social-icons">
-  {member.linkedin && (
-    <a
-      href={member.linkedin}
-      target="_blank"
-      rel="noreferrer"
-      onClick={(e) => e.stopPropagation()}
-    >
-      <FaLinkedin />
-    </a>
-  )}
+                              <div className="social-icons">
+                                {member.linkedin && (
+                                  <a
+                                    href={member.linkedin}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    onClick={(e) => e.stopPropagation()}
+                                  >
+                                    <FaLinkedin />
+                                  </a>
+                                )}
 
-  {member.insta && (
-    <a
-      href={member.insta}
-      target="_blank"
-      rel="noreferrer"
-      onClick={(e) => e.stopPropagation()}
-    >
-      <FaInstagram />
-    </a>
-  )}
-</div>
+                                {member.insta && (
+                                  <a
+                                    href={member.insta}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    onClick={(e) => e.stopPropagation()}
+                                  >
+                                    <FaInstagram />
+                                  </a>
+                                )}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <CardSwap
+                width={cardSwapDimensions.width}
+                height={cardSwapDimensions.height}
+                cardDistance={cardSwapDimensions.cardDistance}
+                verticalDistance={cardSwapDimensions.verticalDistance}
+              >
+                {pastBoards.map((board) => (
+                  <Card key={board.year} customClass="team-card">
+    <div className="bookmark">{board.year}</div>
 
+    <div className="board-card-header">
+      <div>
+        <p className="board-eyebrow">Board Archive</p>
+        <h2 className="year">{board.year}</h2>
       </div>
-    ))}
+      <p className="board-member-count">{board.members.length} members</p>
+    </div>
+
+    <div className="members-grid">
+      {board.members.map((member, index) => (
+        <div key={`${board.year}-${member.name}-${index}`} className="profile-card">
+
+          <div className="profile-image-wrap">
+            <img
+              src={member.img || `https://ui-avatars.com/api/?name=${member.name}`}
+              alt={member.name}
+              className="profile-img"
+            />
+          </div>
+
+          <div className="profile-content">
+    <h3>{member.name}</h3>
+    <p className="role">{member.role}</p>
   </div>
-</Card>
-              ))}
-            </CardSwap>
+
+  <div className="social-icons">
+    {member.linkedin && (
+      <a
+        href={member.linkedin}
+        target="_blank"
+        rel="noreferrer"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <FaLinkedin />
+      </a>
+    )}
+
+    {member.insta && (
+      <a
+        href={member.insta}
+        target="_blank"
+        rel="noreferrer"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <FaInstagram />
+      </a>
+    )}
+  </div>
+
+        </div>
+      ))}
+    </div>
+  </Card>
+                ))}
+              </CardSwap>
+            )}
           </section>
         )}
       </div>

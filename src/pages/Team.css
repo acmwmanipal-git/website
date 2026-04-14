@@ -74,7 +74,10 @@
 }
 
 .cards-container {
-  height: 650px;
+  width: min(1100px, 100%);
+  min-height: 650px;
+  height: auto;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;   /* 🔥 VERY IMPORTANT */
@@ -356,5 +359,235 @@
 
   .profile-card {
     min-height: 220px;
+  }
+}
+
+/* Responsive overrides */
+.cards-container {
+  width: min(1100px, 100%);
+  min-height: 650px;
+  height: auto;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.current-board-section,
+.past-boards-section,
+.team-board-shell {
+  max-width: 100%;
+}
+
+.team-board-shell {
+  width: 100%;
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.members-grid {
+  height: auto;
+  min-height: 0;
+  align-content: start;
+}
+
+.profile-card {
+  min-width: 0;
+}
+
+.profile-card h3 {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1080px) {
+  .cards-container {
+    min-height: 680px;
+  }
+}
+
+@media (max-width: 820px) {
+  .cards-container {
+    min-height: 700px;
+  }
+}
+
+@media (max-width: 640px) {
+  .cards-container {
+    min-height: 620px;
+    overflow: visible;
+  }
+
+  .team-card {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .members-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .profile-card {
+    min-height: 0;
+    padding: 16px 12px 14px;
+    border-radius: 18px;
+  }
+
+  .profile-image-wrap {
+    margin-bottom: 12px;
+  }
+
+  .profile-img {
+    width: 72px;
+    height: 72px;
+  }
+
+  .profile-card h3 {
+    font-size: 0.92rem;
+  }
+
+  .role {
+    font-size: 0.82rem;
+  }
+
+  .social-icons {
+    margin-top: 12px;
+  }
+
+  .social-icons a {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media (max-width: 420px) {
+  .team-toggle {
+    flex-direction: column;
+    border-radius: 24px;
+  }
+
+  .members-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 1199px) {
+  .cards-container {
+    width: 100%;
+    min-height: 0;
+    overflow: visible;
+    padding: 0 16px;
+  }
+
+  .past-boards-section {
+    width: 100%;
+  }
+
+  .team-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .team-accordion-item {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px 18px;
+    border-radius: 24px;
+    text-align: left;
+    background: linear-gradient(160deg, rgba(15, 31, 58, 0.88), rgba(9, 19, 38, 0.94));
+    border: 1px solid rgba(100, 255, 218, 0.16);
+    backdrop-filter: blur(18px);
+    box-shadow:
+      0 22px 55px rgba(0, 0, 0, 0.28),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+    overflow: hidden;
+  }
+
+  .team-accordion-item .bookmark {
+    display: none;
+  }
+
+  .team-toggle-button {
+    width: 100%;
+    display: block;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  .team-toggle-button:hover,
+  .team-toggle-button[aria-expanded="true"] {
+    transform: translateY(-1px);
+  }
+
+  .team-toggle-button .board-card-header {
+    margin-bottom: 0;
+  }
+
+  .team-accordion-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows 0.35s ease, opacity 0.25s ease, margin-top 0.35s ease;
+  }
+
+  .team-accordion-panel.open {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    margin-top: 18px;
+  }
+
+  .team-accordion-panel > .members-grid {
+    min-height: 0;
+    overflow: hidden;
+    height: auto;
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+  .team-page {
+    padding: 100px 20px 48px;
+  }
+
+  .members-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .cards-container {
+    padding: 0 16px;
+  }
+
+  .team-accordion {
+    gap: 16px;
+    max-width: 100%;
+  }
+
+  .team-accordion-item {
+    max-width: 400px;
+    padding: 18px 16px;
+    border-radius: 22px;
+  }
+
+  .team-toggle-button .board-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .members-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 }
